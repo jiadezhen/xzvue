@@ -9,7 +9,7 @@ import MyHeader from "@/components/MyHeader";
 Vue.component("my-header",MyHeader);
 
 //配置axios请求的基础路径
-axios.defaults.baseURL=axios;
+axios.defaults.baseURL="http://localhost:5050";
 //将axios放入vue的原型对象中
 Vue.prototype.axios=axios;
 //结果:将来所有组件中都可用this.axios发送请求
