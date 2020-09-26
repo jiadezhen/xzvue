@@ -3,6 +3,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import axios from "axios"
+import MyHeader from "@/components/MyHeader";
+
+//将MyHeader变为全局组件
+Vue.component("my-header",MyHeader);
 
 //配置axios请求的基础路径
 axios.defaults.baseURL=axios;
