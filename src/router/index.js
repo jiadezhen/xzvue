@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from "@/views/Index";
-import Details from "@/views/Details";
 
 Vue.use(VueRouter)
 
@@ -11,17 +10,14 @@ const routes = [
     component:Index
   },
   {
-    path: "/details/:lid",
-    component: Details
+    path: '/details/:lid',
+    name: 'details',
+    prop: true,
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "details" */ '../views/Details.vue')
   }
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // }
 ]
 
 const router = new VueRouter({
